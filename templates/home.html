@@ -1,0 +1,42 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+<body>
+    <div class="login">
+        
+        <!-- Main Input For Receiving Query to our ML -->
+        <div class="predict">
+
+            <form action="{{ url_for('predict_datapoint')}}" method="post">
+                <label for="">Temperature</label><br>
+                <input type="text" name="Temperature" required/><br><br>
+                <label for="">RH</label><br>
+                <input type="text" name="RH" required /><br><br>
+                <label for="">WS</label><br>
+                <input type="text" name="Ws" required /><br><br>
+                <label for="">Rain</label><br>
+                <input type="text" name="Rain" required /><br><br>
+                <label for="">FFMC</label><br>
+                <input type="text" name="FFMC" required/><br><br>
+                <label for="">DMC</label><br>
+                <input type="text" name="DMC" required><br><br>
+                <label for="">ISI</label><br>
+                <input type="text" name="ISI"required/><br><br>
+                <label for="">Classes</label><br>
+                <input type="text" name="Classes" required/><br><br>
+                <label for="">Region</label><br>
+                <input type="text" name="Region" required/><br><br>
+       
+       
+       
+               <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+        </div>
+        <div class="text">
+            <h1>FWI Prediction</h1>
+            <h2>
+               THE FWI prediction is {{result}}
+            </h2>
+        </div>
+    </div>
+   <body>
+</html>
